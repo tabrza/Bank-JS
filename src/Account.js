@@ -21,9 +21,15 @@
       if(checkAmountToBalance){
         throw new Error("Insufficient funds");
       }
-
       var withdraw = new Withdraw(amount);
+      var that = this;
+      reduceAmount(amount)
       this.addTransaction(withdraw);
+
+
+      function reduceAmount(amount){
+        that.balance -= amount;
+      }
     };
 
     Account.prototype.allTransactions = function(){
