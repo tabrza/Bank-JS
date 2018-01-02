@@ -10,6 +10,11 @@ describe("Account", function () {
             account.deposit(10);
             expect(account.transactions[0].credit).toEqual(10);
         });
+
+        it("increases balance", function(){
+            account.deposit(10);
+            expect(account.balance).toEqual(10);
+        });
     });
 
     describe("#withdraw", function(){
