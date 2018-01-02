@@ -30,8 +30,13 @@ describe("Account", function () {
             expect(account.balance).toEqual(5);
         });
 
+        it("cannot withdraw more than balance", function () {
+          expect(function () {
+            expect(account.withdraw(15));
+          }).toThrowError("Insufficient funds");
+        });
     });
-    
 
+  
 
 });
