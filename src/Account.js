@@ -4,11 +4,11 @@ function Account() {
     this.history = null;
 }
 
-
-Account.prototype.deposit = function (amount) {
-    "use strict";
-    this.balance += amount;
-};
+// 
+// Account.prototype.deposit = function (amount) {
+//     "use strict";
+//     this.balance += amount;
+// };
 
 Account.prototype.withdraw = function (amount) {
     "use strict";
