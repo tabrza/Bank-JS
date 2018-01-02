@@ -14,8 +14,29 @@ describe("Account", function () {
 
     describe("#withdraw", function(){
         it("adds a new withdraw", function(){
-            account.withdraw(5);
-            expect(account.transactions[0].balance).toEqual(5);
+            withdrawSetup();
+            expect(account.transactions[1].balance).toEqual(5);
+        });
+
+        it("cannot withdraw more than balance", function(){
+            expect(function(){
+               expect(account.withdraw(15));
+            }).toThrowError("Insufficient funds");
         });
     });
+
+    describe("#allTransactions", function(){
+        it("reveals all transactions", function(){
+          //add date for current transaction
+            withdrawSetup();
+            expect(account.allTransactions()[0].balance).toEqual(10);
+            expect(account.allTransactions()[1].balance).toEqual(5);
+        });
+    });
+
+
+    function withdrawSetup(){
+      account.deposit(10);
+      account.withdraw(5);
+    }
 });
