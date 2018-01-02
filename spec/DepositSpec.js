@@ -3,7 +3,7 @@ describe("Deposit", function () {
     var deposit;
 
     beforeEach(function () {
-        deposit = new Deposit(10);
+        deposit = new Deposit(10, "2018/2/1");
     });
 
 
@@ -11,4 +11,7 @@ describe("Deposit", function () {
         expect(deposit.balance).toEqual(10);
     });
 
+    it("returns date of transaction", function () {
+        expect(deposit.date).toEqual("2018/2/1");
+    });
 });
