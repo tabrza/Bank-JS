@@ -8,7 +8,7 @@ describe("Deposit", function () {
 
 
     it("returns a value of 10", function () {
-        expect(deposit.balance).toEqual(10);
+        expect(deposit.credit).toEqual(10);
     });
 
     it("returns date of transaction", function () {

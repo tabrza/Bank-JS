@@ -7,7 +7,7 @@
 
     Account.prototype.deposit = function(amount){
       var that = this;
-      var deposit = new Deposit(amount);
+      var deposit = new Deposit(amount, this.balance);
       addAmount(amount);
       this.addTransaction(deposit);
 
@@ -21,7 +21,7 @@
       if(checkAmountToBalance){
         throw new Error("Insufficient funds");
       }
-      var withdraw = new Withdraw(amount);
+      var withdraw = new Withdraw(amount, this.balance);
       var that = this;
       reduceAmount(amount)
       this.addTransaction(withdraw);

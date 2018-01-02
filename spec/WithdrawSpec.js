@@ -6,7 +6,7 @@ describe("Withdraw", function () {
   });
 
   it("returns a value of 5", function () {
-      expect(withdraw.balance).toEqual(5);
+      expect(withdraw.debit).toEqual(5);
   });
 
   it("returns date of transaction", function () {

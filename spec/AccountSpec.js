@@ -8,14 +8,14 @@ describe("Account", function () {
     describe("#deposit", function () {
         it("adds a new deposit", function(){
             account.deposit(10);
-            expect(account.transactions[0].balance).toEqual(10);
+            expect(account.transactions[0].credit).toEqual(10);
         });
     });
 
     describe("#withdraw", function(){
         it("adds a new withdraw", function(){
             withdrawSetup();
-            expect(account.transactions[1].balance).toEqual(5);
+            expect(account.transactions[1].debit).toEqual(5);
         });
 
         it("cannot withdraw more than balance", function(){
@@ -34,8 +34,8 @@ describe("Account", function () {
         it("reveals all transactions", function(){
           //add date for current transaction
             withdrawSetup();
-            expect(account.allTransactions()[0].balance).toEqual(10);
-            expect(account.allTransactions()[1].balance).toEqual(5);
+            expect(account.allTransactions()[0].credit).toEqual(10);
+            expect(account.allTransactions()[1].debit).toEqual(5);
         });
     });
 
