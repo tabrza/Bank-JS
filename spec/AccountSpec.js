@@ -20,6 +20,18 @@ describe("Account", function () {
         });
     });
 
+    describe("withdraw", function () {
+        beforeEach(function () {
+            account.deposit(10);
+        });
+
+        it("returns a value of 5", function () {
+            account.withdraw(5);
+            expect(account.balance).toEqual(5);
+        });
+
+    });
     
+
 
 });
