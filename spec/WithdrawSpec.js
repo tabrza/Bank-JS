@@ -13,9 +13,4 @@ describe("Withdraw", function () {
       expect(withdraw.date).toEqual("2018/2/1");
   });
 
-  // it("cannot withdraw more than balance", function () {
-  //     expect(function () {
-  //         expect(account.withdraw(15));
-  //     }).toThrowError("Insufficient funds");
-  // });
 });
