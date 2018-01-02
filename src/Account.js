@@ -12,6 +12,6 @@
       var withdraw = new Withdraw(amount);
       this.transactions.push(withdraw);
     };
-    
+     
     exports.Account = Account;
 })(this);
