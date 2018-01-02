@@ -1,6 +1,7 @@
 function Account() {
     "use strict";
     this.balance = 0;
+    this.history = null;
 }
 
 
@@ -15,4 +16,5 @@ Account.prototype.withdraw = function (amount) {
         throw new Error("Insufficient funds");
     }
     this.balance -= amount;
+    this.history = moment().format("MMM Do YY");
 };
