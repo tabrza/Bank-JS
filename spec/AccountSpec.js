@@ -23,6 +23,11 @@ describe("Account", function () {
                expect(account.withdraw(15));
             }).toThrowError("Insufficient funds");
         });
+
+        it("reduces balance", function(){
+            withdrawSetup();
+                expect(account.balance).toEqual(5);
+        });
     });
 
     describe("#allTransactions", function(){
