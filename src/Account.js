@@ -11,6 +11,8 @@ Account.prototype.deposit = function (amount) {
 
 Account.prototype.withdraw = function (amount) {
     "use strict";
-  
+    if (amount > this.balance) {
+        throw new Error("Insufficient funds");
+    }
     this.balance -= amount;
 };
