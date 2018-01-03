@@ -23,9 +23,8 @@
       }
       var withdraw = new Withdraw(amount, "debit", this.balance);
       var that = this;
-      reduceAmount(amount)
+      reduceAmount(amount);
       this.addTransaction(withdraw);
-
 
       function reduceAmount(amount){
         that.balance -= amount;
