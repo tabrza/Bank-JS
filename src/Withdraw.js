@@ -1,6 +1,6 @@
 (function(exports){
-    function Withdraw(amount, date = Date.now(), balance){
-        this.type = "debit";
+    function Withdraw(amount, type, date = Date.now(), balance){
+        this.type = type;
         this.debit = amount;
         this.date = date;
         this.current_balance = balance;

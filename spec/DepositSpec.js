@@ -3,9 +3,8 @@ describe("Deposit", function () {
     var deposit;
 
     beforeEach(function () {
-        deposit = new Deposit(10, "2018/2/1");
+        deposit = new Deposit(10, "credit", "2018/2/1");
     });
-
 
     it("returns a value of 10", function () {
         expect(deposit.credit).toEqual(10);
