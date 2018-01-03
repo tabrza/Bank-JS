@@ -1,26 +1,33 @@
-Bank tech test
-Today, you'll practice doing a tech test.
+#Bank App
 
-For most tech tests, you'll essentially have unlimited time. This practice session is about producing the best code you can when there is a minimal time pressure.
+A JavaScript console log application which allows the user to create a new account, add a deposit, a withdrawal and print out their statement. Should the user not have enough money in their account, they will receive an error with "Insufficient funds".
 
-You'll get to practice your OO design and TDD skills.
+Using Jasmine, a complete TDD approach has been applied to test this project, including edge cases. Following the SRP methodology, each class is responsible for a single job.
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+###### To Run
+In order to run this application, please clone it to your local desktop. No packages have been used and it can therefore be started immediately. Pls open SpecRunner.html to view the tests implemented and to interact with the code in the console.
 
-Specification
-Requirements
-You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
-Deposits, withdrawal.
-Account statement (date, amount, balance) printing.
-Data can be kept in memory (it doesn't need to be stored to a database or anything).
-Acceptance criteria
-Given a client makes a deposit of 1000 on 10-01-2012
-And a deposit of 2000 on 13-01-2012
-And a withdrawal of 500 on 14-01-2012
-When she prints her bank statement
-Then she would see
+###### Create Account
+In order to get started, the user will first need to create an account.
+**account = new Account();**
 
-date || credit || debit || balance
-14/01/2012 || || 500.00 || 2500.00
-13/01/2012 || 2000.00 || || 3000.00
-10/01/2012 || 1000.00 || || 1000.00
+###### Create Deposit
+Now the user fills out the deposit 'slip' with the following information:
+**deposit = new Deposit(10, "credit", 0, "03/01/2018");**
+
+###### Complete Deposit
+In order for the deposit to enter the account, the bank verifies the amount and **enters the deposit as follows: account.deposit(10);**
+
+###### Create Withdrawal
+To following command needs to be entered in order to initiate withdrawal proceedings.
+**withdraw = new Withdraw(5, "debit", 20, "03/01/2018");**
+
+###### Complete Withdrawal
+For the bank to finalise the withdrawal, the amount will be re-entered as follows resulting in the deduction from the account:
+**account.withdraw(5);**
+
+###### View Account
+In order to view the transactions belonging to the account, the following commands should be entered, passing in the account details:
+**accountView = new AccountView(account);**
+A view can now be rendered showing the details of withdrawals and deposits in the console:
+**accountView.render();**
