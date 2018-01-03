@@ -1,9 +1,9 @@
 (function (exports) {
-    function Deposit(amount, type, date = new Date(), balance) {
-        this.type = type;
+    function Deposit(amount, type, balance, date = new Date()) {
         this.credit = amount;
-        this.date = date;
+        this.type = type;
         this.current_balance = balance;
+        this.date = date;
     }
 
     exports.Deposit = Deposit;
